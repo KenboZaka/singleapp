@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('index', 'PostController@index');
-Route::post('index/confirm', ['as'=>'confirm', 'uses'=>'PostController@create']);
-Route::get('index/{id}', ['as'=>'show', 'uses'=>'PostController@show']);
+Route::get('post', 'PostController@index');
+Route::post('post/confirm', 'PostController@confirm');
+Route::post('post/create', 'PostController@create');
+// Route::post('post/delete', 'PostController@delete');
+// Route::get('post/detail/{id}', 'PostController@detail');
+// Route::get('post/edit/{id}', 'PostController@edit');
+// Route::post('post/edit/{id}', 'PostController@update');#←そのごリダイレクトなど;
+
