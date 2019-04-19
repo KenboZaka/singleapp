@@ -18,7 +18,7 @@
                 <span class="text-danger">{{$errors->first('age')}}</span>
             @endif
         <label for="content">投稿内容</label>
-            <textarea name="content" id="content" >{{old('content')}}</textarea>
+            <textarea name="content" id="content" value="{{old('content')}}"></textarea>
             @if($errors->has('content'))
                 <span class="text-danger">{{$errors->first('content')}}</span>
             @endif
@@ -27,7 +27,7 @@
     <div>
         <table>
             @foreach($posts as $post) 
-        <a href="/index/{{$post->id}}">
+        <a href="/post/detail/{{$post->id}}">
                     {{$post->content}}
                 </a> 
                     {{$post->name}},

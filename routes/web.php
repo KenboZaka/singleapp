@@ -18,8 +18,7 @@ Route::get('/', function () {
 Route::get('post', 'PostController@index');
 Route::post('post/confirm', 'PostController@confirm');
 Route::post('post/create', 'PostController@create');
-// Route::post('post/delete', 'PostController@delete');
-// Route::get('post/detail/{id}', 'PostController@detail');
-// Route::get('post/edit/{id}', 'PostController@edit');
-// Route::post('post/edit/{id}', 'PostController@update');#←そのごリダイレクトなど;
-
+Route::post('post/delete/{id}', 'PostController@delete');
+Route::get('post/detail/{id}', 'PostController@detail');
+Route::get('post/edit/{id}', 'PostController@edit');
+Route::post('post/edit/{id}', 'PostController@update');

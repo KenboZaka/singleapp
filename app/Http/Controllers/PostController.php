@@ -36,17 +36,32 @@ class PostController extends Controller
         return redirect('/post');
     }
 
+    public function detail($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('detail', ['post'=>$post]);
+    }
 
-//     public function show($id)
-//     {
-//             $post = Post::findOrFail($id);
-//             return view('show', ['post'=>$post]);
-//     }
+    public function delete($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('/post');
+    }
 
-//     public function destroy(Request $request, $id, Post $post)
-//     {
-//             $post = Post::find($id);
-//             $post->delete();
-//             return redirect('/post');
-//     }
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('edit', ['post'=>$post]);
+    }
+
+    public function update(ValiRequest $request, $id)
+    {
+        $post = Post::find($id);
+        $post->name = $request->name;
+        $post->age = $request->age;
+        $post->content = $request->content;
+        $post->save();
+        return redirect('/post');
+    }
  }
