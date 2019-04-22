@@ -26,7 +26,7 @@ class ValiRequest extends FormRequest
         return [
             'title'=> 'required',
             'name'=>'required',
-            'age'=>'numeric|required',
+            'age'=>'required|numeric',
             'content'=>'required|max:200',
         ];
     }
@@ -35,7 +35,9 @@ class ValiRequest extends FormRequest
         return [
             'title.required' => '入力必須項目です',
             'name.required' => '入力必須項目です',
-            'numeric' => '数字で入力してください',
+            'age.required' => '入力必須項目です',
+            'age.numeric' => '数字で入力してください',
+            'content.required' => '入力必須項目です',
             'content.max:200' => '200文字以内で入力してください',
         ];
     }
