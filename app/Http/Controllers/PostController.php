@@ -16,9 +16,10 @@ class PostController extends Controller
     }
 
     // 投稿内容の確認・表示
-    public function confirm(Request $request)
+    public function confirm(ValiRequest $request)
     {
         $post = new Post;
+        $post->title = $request->title;
         $post->name = $request->name;
         $post->age = $request->age;
         $post->content = $request->content;
@@ -26,9 +27,10 @@ class PostController extends Controller
     }
     
     // 新規投稿メソッド・トップページへのリダイレクト
-    public function create(ValiRequest $request)
+    public function create(Request $request)
     {
         $post = new Post;
+        $post->title = $request->title;
         $post->name = $request->name;
         $post->age = $request->age;
         $post->content = $request->content;
@@ -58,6 +60,7 @@ class PostController extends Controller
     public function update(ValiRequest $request, $id)
     {
         $post = Post::find($id);
+        $post->title = $request->title;
         $post->name = $request->name;
         $post->age = $request->age;
         $post->content = $request->content;

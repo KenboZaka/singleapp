@@ -1,24 +1,24 @@
 @extends('layouts.master')
 
 @section('content')
-        <div>
-                <table>
-                        <tr>
-                        <td>{{$post->name}}</td>
-                        <td>{{$post->age}}</td>
-                        <td>{{$post->content}}</td>
-                        </tr>
-                </table>
-                <a href="/post">一覧に戻る</a>
-
-                <div>
-                <form type="hidden" action="/post/delete/{{$post->id}}" method="post">
+        <div class="card">
+                <div class="card-header">
+                        <p class="h3">{{$post->title}}</p>
+                </div>
+                <div class="card-body">
+                        <p>{{$post->name}}</p>
+                        <p>{{$post->age}}歳</p>
+                        <p>{{$post->content}}</p>
+                </div>
+                <div class="card-footer">
+                        <a href="/post/edit/{{$post->id}}" class="btn btn-success float-left">編集する</a>
+                        <form action="/post/delete{{$post->id}}"  method="post">
                         @csrf
-                        <button type="submit" class="btn btn-danger">削除する</button>
-                </form>
-                <form type="hidden" action="/post/edit/{{$post->id}}" method="get">
-                        @csrf
-                        <button type="submit" class="btn btn-success">編集する</button>
-                </form>
+                        <input type="submit" class="btn btn-danger float-left ml-3" value="削除する">
+                        </form>
+                </div>
         </div>
+                <a class="mt-4 btn btn-secondary" href="/post">一覧に戻る</a>
+
+                
 @endsection

@@ -24,6 +24,7 @@ class ValiRequest extends FormRequest
     public function rules()
     {
         return [
+            'title'=> 'required',
             'name'=>'required',
             'age'=>'numeric|required',
             'content'=>'required|max:200',
@@ -32,7 +33,8 @@ class ValiRequest extends FormRequest
     public function messages()
     {
         return [
-            'required' => '入力必須項目です',
+            'title.required' => '入力必須項目です',
+            'name.required' => '入力必須項目です',
             'numeric' => '数字で入力してください',
             'content.max:200' => '200文字以内で入力してください',
         ];
