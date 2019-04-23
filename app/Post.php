@@ -7,10 +7,10 @@ use \App\Comment;
 
 class Post extends Model
 {   
-    public $timestamps = false;
+    // public $timestamps = false;
     protected $fillable = ['title', 'name', 'age', 'content'];
 
-    public function comment(){
+    public function comments(){
         return $this->hasMany('App\Comment');
     }
 }

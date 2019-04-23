@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Post;
+use \App\Comment;
 use App\Http\Requests\ValiRequest;
 
 class PostController extends Controller

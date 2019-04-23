@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/post', 'PostController@index');
 Route::post('post/confirm', 'PostController@confirm');
 Route::post('post/create', 'PostController@create');
@@ -22,3 +18,8 @@ Route::post('post/delete{id}', 'PostController@delete');
 Route::get('post/detail/{id}', 'PostController@detail');
 Route::get('post/edit/{id}', 'PostController@edit');
 Route::post('post/edit/{id}', 'PostController@update');
+Route::post('comment/create', 'CommentController@create');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
