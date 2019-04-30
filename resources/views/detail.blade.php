@@ -1,4 +1,4 @@
-{@extends('layouts.master')
+@extends('layouts.master')
 
 @section('content')
 <div class="card">
@@ -8,8 +8,8 @@
                 @csrf
                 <input type="submit" class="btn btn-danger float-right ml-3" value="削除する">
                 </form>
+                {{-- 以後注意！重要：form閉じタグがなかったことで正常に作動しなかった      --}}
                 <a href="/post/edit/{{$post->id}}" class="btn btn-success float-right">編集する</a>
-                
         </div>
         <div class="card-body">
                 <p>{{$post->name}}</p>
@@ -17,7 +17,8 @@
                 <p>{{$post->content}}</p>
         </div>
         <div class="card-footer">
-                <a class="mt-4 btn btn-secondary" href="/post">一覧に戻る</a>
+                <a class="mt-4 btn btn-secondary" href="/post">一覧に戻る</a>  
+                {{-- 一覧に戻るはページ上部へ --}}
         <div class="card mt-2">
                 @foreach($post->comments as $comment) 
                 <a class="card-header" href="">{{$comment->title}}</a>
@@ -63,4 +64,3 @@
 
         
 @endsection
-}

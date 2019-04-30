@@ -18,7 +18,7 @@ Route::post('post/delete{id}', 'PostController@delete');
 Route::get('post/detail/{id}', 'PostController@detail');
 Route::get('post/edit/{id}', 'PostController@edit');
 Route::post('post/edit/{id}', 'PostController@update');
-Route::post('comment/create', 'CommentController@create');
+Route::post('comment/create', 'CommentController@create'); #postと区別して、コメント機能はcomment/createとして、ルートをわかりやすく
 
 Auth::routes();
 

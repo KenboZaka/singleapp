@@ -1,39 +1,49 @@
 @extends('layouts.master')
 
 @section('content')
-<div>
+<div class="my-2">
             
-    <h1>single_App</h1>
+    <h4>トピック一覧</h4>
+<div class="topicslist my-2 center">
+    <ul class="list-unstyled nav nav-tabs">
+        <li class="nav-item "><a href="#tab1" data-toggle="tab" class="nav-link navbar-default">Tab 1</a></li>
+        <li class="nav-item"><a href="#tab2" data-toggle="tab" class="nav-link navbar-default active">Tab 2</a></li>
+        <li class="nav-item"><a href="#tab3" data-toggle="tab" class="nav-link navbar-default">Tab 3</a></li>
+    </ul>
 
-    <form class="form-group mb-5" action="/post/confirm" method="post">
-        @csrf
-        <label for="title">タイトル</label>
-            @if($errors->has('title'))
-            <span class="text-danger">{{$errors->first('title')}}</span>
-            @endif
-            <input class="form-control mb-4" type="text" name="title" id="title" placeholder="enter_title" value="{{old('title')}}">
-           
-        <label for="name">名前</label>
-            @if($errors->has('name'))
-            <span class="text-danger">{{$errors->first('name')}}</span>
-            @endif
-            <input class="form-control mb-4" type="text" name="name" id="name" placeholder="enter_name" value="{{old('name')}}">
-            
-        <label for="name">年齢</label>
-            @if($errors->has('age'))
-            <span class="text-danger">{{$errors->first('age')}}</span>
-            @endif
-            <input class="form-control mb-4" type="text" name="age" id="age" placeholder="enter_age" value="{{old('age')}}">
-            
-        <label for="content">投稿内容</label>
-            @if($errors->has('content'))
-            <span class="text-danger">{{$errors->first('content')}}</span>
-            @endif
-            <textarea  class="form-control mb-2" name="content" id="content" value="{{old('content')}}"></textarea>
-
-        <input class="btn btn-primary my-2" type="submit" value="投稿する">
-    </form>
-    <div class="card mt-2">
+    <div class="tab-content">
+        <div id="tab1" class="tab-pane">
+            <ul class="list-group list-unstyled my-2">
+                <li class="list-group-item py-3"><a href="">Topic 1</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 2</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 3</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 4</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 5</a></li>
+            </ul>
+        </div>
+        <div id="tab2" class="tab-pane active">
+            <ul class="list-group list-unstyled my-2">
+                <li class="list-group-item py-3"><a href="">Topic 6</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 7</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 8</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 9</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 10</a></li>
+            </ul>
+        </div>
+        <div id="tab3" class="tab-pane">
+            <ul class="list-group list-unstyled my-2">
+                <li class="list-group-item py-3"><a href="">Topic 11</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 12</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 13</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 14</a></li>
+                <li class="list-group-item py-3"><a href="">Topic 15</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container mb-5">
+    <div class="row mt-4">
+        <div class="card col-md-4 p-0">
         @foreach($posts as $post) 
         <a class="card-header" href="/post/detail/{{$post->id}}">{{$post->title}}</a>
         <div class="card-body">
@@ -45,5 +55,31 @@
         </div>
         @endforeach
     </div>
+        <div class="card col-md-4 p-0">
+        @foreach($posts as $post) 
+        <a class="card-header" href="/post/detail/{{$post->id}}">{{$post->title}}</a>
+        <div class="card-body">
+        <div class="card-text">
+            <p>{{$post->name}}</p>
+            <p>{{$post->age}}歳</p>
+            <p>{!!nl2br($post->content)!!}</p>
+        </div>
+        </div>
+        @endforeach
+    </div>
+        <div class="card col-md-4 p-0">
+        @foreach($posts as $post) 
+        <a class="card-header" href="/post/detail/{{$post->id}}">{{$post->title}}</a>
+        <div class="card-body">
+        <div class="card-text">
+            <p>{{$post->name}}</p>
+            <p>{{$post->age}}歳</p>
+            <p>{!!nl2br($post->content)!!}</p>
+        </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+</div>
 </div>
 @endsection
