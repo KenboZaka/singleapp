@@ -21,7 +21,7 @@
                         <span class="text-danger">{{$errors->first('age')}}</span>
                 @endif
                 <label for="content">投稿内容</label>
-                <textarea class="form-control" name="content" id="content" >{{$post->content}}</textarea>
+                <textarea rows="5" class="form-control" name="content" id="content" >{{$post->content}}</textarea>
                 @if($errors->has('content'))
                         <span class="text-danger">{{$errors->first('content')}}</span>
                 @endif

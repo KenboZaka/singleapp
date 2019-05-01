@@ -9,6 +9,9 @@ use App\Http\Requests\ValiRequest;
 
 class PostController extends Controller
 {
+    public function  __construct(){
+        $this->middleware('auth')->except(['index','detail']);
+    }
     // トップページと投稿内容表示
     public function index()
     { 

@@ -15,8 +15,11 @@
                     @endif
 
                     You are logged in!
+                    
                 </div>
+                
             </div>
+            <a class="btn btn-primary mt-3" href="/post">一覧へ戻る</a>
         </div>
     </div>
 </div>

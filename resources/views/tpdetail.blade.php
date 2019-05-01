@@ -7,6 +7,7 @@
         {{-- 記事の詳細を表示 --}}
             <p>{!! nl2br()!!}</p>  
     </div>
+    {{-- 記事の投稿フォーム --}}
     <div>
         <form class="form-group mb-5" action="/post/confirm" method="post">
             @csrf
@@ -32,7 +33,7 @@
                 @if($errors->has('content'))
                 <span class="text-danger">{{$errors->first('content')}}</span>
                 @endif
-                <textarea  class="form-control mb-2" name="content" id="content" value="{{old('content')}}"></textarea>
+                <textarea  rows="5" class="form-control mb-2" name="content" id="content" value="{{old('content')}}"></textarea>
     
             <input class="btn btn-primary my-2" type="submit" value="投稿する">
         </form>
