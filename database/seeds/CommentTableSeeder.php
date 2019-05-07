@@ -15,8 +15,8 @@ class CommentTableSeeder extends Seeder
         $content = 'ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。';
         for($i=1; $i<=15; $i++){
             $comment = new Comment;
-            $comment->title = $i.'番目の投稿';
-            $comment->name = $i.'番目のユーザー';
+            // $comment->user_id = $i;
+            // $comment->post_id = $i;
             $comment->content = $content;
             $comment->save();
         }

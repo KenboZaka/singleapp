@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-        <h1>編集</h1>
+        <div class="container">
+        <h4><i class="fas fa-pencil-alt"></i>編集</h4>
         <div>
         <form class="form-group" action="" method="post">
                 @csrf
@@ -28,5 +29,6 @@
                 <input class="btn btn-info my-3" type="submit" value="変更する">
         </form>
                 <a class="mt-2 btn btn-secondary" href="/post">一覧に戻る</a>
+        </div>
         </div>
 @endsection

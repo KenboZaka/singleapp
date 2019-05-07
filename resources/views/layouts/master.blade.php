@@ -12,12 +12,11 @@
     <title>@yield('title')</title>
     <script src='{{asset("js/app.js")}}' defer></script>
 </head>
-<body class="pt-5">
+<body class="pb-5">
     <header class="mb-4">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top mb-4">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-success fixed-top mb-4">
             <div class="container">
-            <a href="/post" class="navbar-brand">Single_App</a>
-            {{-- @auth --}}
+            <a href="/post" class="navbar-brand h1">Single_App</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,11 +26,11 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>{{ __('ログイン') }}</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i>{{ __('新規登録') }}</a>
                             </li>
                         @endif
                     @else
@@ -55,37 +54,21 @@
                     @endguest
                 </ul>
             </div>
-            {{-- @endauth --}}
             </div>
         </nav>
     </header>
-    <div class="container mb-3">
+    <div class="mb-3">
         @yield('content')
     </div>
-    <footer class="footer bg-info fixed-bottom mt-4">
+    <footer class="footer bg-success fixed-bottom">
         <div class="py-3">
             <span class="fab fa-twitter"></span>
             <span class="fab fa-facebook"></span>
             <p class="float-right text-white mb-0 mr-3">CopyRight  </p>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-{{-- <!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>posts</title>
-        @include('layouts.stylesheet')
-    </head>
-    <body>
-        <div class="container">
-        @include('layouts.nav')
-        @yield('content')
-        </div>
-    </body>
-</html>
- --}}
-

@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use App\Post;
 use App\User;
 
-class Comment extends Model
+class Evaluation extends Model
 {
-    protected $fillable = [
-        'user_id', 'post_id','content',
+    protected $fillable=[
+        'evaluation'
     ];
 
     public function posts(){
