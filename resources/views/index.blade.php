@@ -15,30 +15,32 @@
     <div class="tab-content">
         <div id="tab1" class="tab-pane">
             <ul class="list-group list-unstyled my-2">
-                <li class="list-group-item py-3"><a href="">Topic 1</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 2</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 3</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 4</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 5</a></li>
+                @foreach($topics as $topic)
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
             </ul>
         </div>
         <div id="tab2" class="tab-pane active">
             <ul class="list-group list-unstyled my-2">
-                <li class="list-group-item py-3"><a href="">Topic 6</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 7</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 8</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 9</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 10</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
             </ul>
         </div>
         <div id="tab3" class="tab-pane">
             <ul class="list-group list-unstyled my-2">
-                <li class="list-group-item py-3"><a href="">Topic 11</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 12</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 13</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 14</a></li>
-                <li class="list-group-item py-3"><a href="">Topic 15</a></li>
-            </ul>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+            <li class="list-group-item py-3"><a href="/topic/{{$topic->id}}">{{$topic->title}}</a></li>
+                @endforeach    
+        </ul>
         </div>
     </div>    
     </div>
@@ -59,38 +61,27 @@
         <h4 class="p-2"><i class="fas fa-pencil-alt"></i>トピック別投稿</h4>
     <div class="">
     <div class="row">
-        <div class="card col-md-4 p-0">
+        <div class="card col-4 p-0">
         @foreach($posts as $post) 
-        <a class="card-header" href="/post/detail/{{$post->id}}">{{$post->title}}</a>
+        
         <div class="card-body">
-        <div class="card-text">
-            <p>{{$post->name}}</p>
-            <p>{{$post->age}}歳</p>
-            <p>{!!nl2br($post->content)!!}</p>
+            <a href="/post/detail/{{$post->id}}">{{$post->content}}</a>
         </div>
         </div>
         @endforeach
         </div>
-        <div class="card col-md-4 p-0">
+        <div class="card col-4 p-0">
         @foreach($posts as $post) 
-        <a class="card-header" href="/post/detail/{{$post->id}}">{{$post->title}}</a>
         <div class="card-body">
-        <div class="card-text">
-            <p>{{$post->name}}</p>
-            <p>{{$post->age}}歳</p>
-            <p>{!!nl2br($post->content)!!}</p>
+            <a href="/post/detail/{{$post->id}}">{{$post->content}}</a>
         </div>
         </div>
         @endforeach
     </div>
-        <div class="card col-md-4 p-0">
-        @foreach($posts as $post) 
-        <a class="card-header" href="/post/detail/{{$post->id}}">{{$post->title}}</a>
+        <div class="card col-4 p-0">
+        @foreach($posts as $post)       
         <div class="card-body">
-        <div class="card-text">
-            <p>{{$post->name}}</p>
-            <p>{{$post->age}}歳</p>
-            <p>{!!nl2br($post->content)!!}</p>
+                <a href="/post/detail/{{$post->id}}">{{$post->content}}</a>
         </div>
         </div>
         @endforeach

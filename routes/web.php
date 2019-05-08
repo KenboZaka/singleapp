@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/post', 'PostController@index');
+Route::get('/topic', 'TopicController@index');
+Route::get('/topic', 'PostController@index');
 Route::post('post/confirm', 'PostController@confirm');
 Route::post('post/create', 'PostController@create');
 Route::post('post/delete{id}', 'PostController@delete');

@@ -15,7 +15,8 @@ class PostController extends Controller
     // トップページと投稿内容表示
     public function index()
     { 
-        $posts = Post::latest()->limit(1)->get();
+        $posts = Post::all();
+        // $posts = Post::latest()->limit(1)->get();
         return view('index', ['posts' => $posts]);
     }
 

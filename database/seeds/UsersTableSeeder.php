@@ -15,7 +15,8 @@ class UsersTableSeeder extends Seeder
         for($i=1; $i<=15; $i++){
             $user = new User;
             $user->name = $i.'番目のユーザー';
-            $user->email = $i.'abcdefg@gmail.com';
+            $user->email = $i.'abc@gmail.com';
+            $user->password = $i*5;
             $user->save();
     }
 }

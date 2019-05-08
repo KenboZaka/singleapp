@@ -15,9 +15,9 @@ class TopicsTableSeeder extends Seeder
         $content = 'トピックダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。ダミーです。';
         for($i=1; $i<=15; $i++){
             $topic = new Topic;
-            $topic->genre = $i.'のジャンル';
-            $topic->title = $i.'番目のタイトル';
-            $topic->body = $content;
+            $topic->genre = $i.'トピックのジャンル';
+            $topic->title = $i.'番目トピックのタイトル';
+            $topic->body = $i."番目の".$content;
             $topic->save();
     }
 }
